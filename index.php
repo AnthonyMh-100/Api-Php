@@ -2,6 +2,7 @@
 
 require_once "./module/alumnos.php";
 
+// Buscando las solicitudes mediante un switch
 switch($_SERVER['REQUEST_METHOD']){
     case 'GET':
         if (isset($_GET['id'])) {

@@ -3,6 +3,7 @@
 
     class Alumnos{
 
+        // funcion para obtener todos los datos de los alumnos
         public static function getAll() {
             $db = new Connection();
             $query = "SELECT *FROM datos";
@@ -17,11 +18,12 @@
                         'lugar' => $row['lugar'],
                         'precio' => $row['precio']
                     ];
-                }//end while
+                }
                 return $datos;
-            }//end if
+            }
             return $datos;
-        }//end getAll
+        }
+        // funcion para obtener solo un dato de un alumno
 
         public static function getWhere($id) {
             $db = new Connection();
@@ -37,11 +39,12 @@
                         'lugar' => $row['lugar'],
                         'precio' => $row['precio']
                     ];
-                }//end while
+                }
                 return $datos;
-            }//end if
+            }
             return $datos;
-        }//end getWhere
+        }
+        // funcion para insertar un nuevo alumno
 
         public static function insert($nombre, $apellido, $lugar, $precio) {
             $db = new Connection();
@@ -50,10 +53,10 @@
             $db->query($query);
             if($db->affected_rows) {
                 return TRUE;
-            }//end if
+            }
             return FALSE;
-        }//end insert
-
+        }
+         // funcion para actualizar al alumno
         public static function update($id, $nombre, $apellido, $lugar, $precio) {
             $db = new Connection();
             $query = "UPDATE datos SET
@@ -62,18 +65,18 @@
             $db->query($query);
             if($db->affected_rows) {
                 return TRUE;
-            }//end if
+            }
             return FALSE;
-        }//end update
-
+        }
+            // funcion para eliminar un alumno
         public static function delete($id) {
             $db = new Connection();
             $query = "DELETE FROM datos WHERE id=$id";
             $db->query($query);
             if($db->affected_rows) {
                 return TRUE;
-            }//end if
+            }
             return FALSE;
-        }//end delete
+        }
 
-    }//end class Cliente
+    }

@@ -5,5 +5,5 @@
             parent::__construct('localhost', 'root', '', 'alumnos');
             $this->set_charset('utf8');
             $this->connect_error == NULL ? 'Conexión exítosa a la DB' : die('Error al conectarse a la BD');
-        }//end __construct
-    }//end class Connection
+        }//final de construccion
+    }//final de la clase
